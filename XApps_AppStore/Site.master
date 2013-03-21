@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            background:#A6E3BC
+        }
+        .style2
+        {
+            height: 100px;
+            vertical-align:middle;
+        }
+        .style3
+        {
+            width: 100%;
+        }
+        .style4
+        {
+            width: 225px;
+            height: 623px;
+            background:#A6E3BC
+        }
+        .style5
+        {
+            height: 623px;
+            background:#B6E4D9
+        }
+        #class1
+        {
+            height: 23px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+           
+            <div>
+            <table class="style1">
+                    <tr>
+                        <td class="style2">
+                        <div id="logo_image" align="center">
+                            <asp:Image ID="logo"  ImageUrl="images/logo.png" runat="server" 
+                                vertical-align="center" Height="90px" Width="110px"/>
+                            </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td>
+                        <div align="center" >
+                            <asp:Label ID="Label1" runat="server" CssClass="Intro_text" Font-Bold="True" 
+                                Font-Overline="False" Font-Size="XX-Large" Font-Underline="False" 
+                                Text="INTRANET WEB PORTAL" Height="39px" ></asp:Label>
+                        </div>
+                        <div align="right">
+                            <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a>
+                        </div>
+                            
+                        </td>
+                    </tr>
+                   
+                </table>
+            </div>
+            <div class="clear hideSkiplink">
+            <div id="menu-bar">
+            
+            <asp:ImageButton ID="home" runat="server" 
+                    ImageUrl="images/home_btn.png" Height="43px" Width="45px" 
+                    CssClass="home_btn" BorderStyle="None" BorderWidth="0px" ToolTip="Home" PostBackUrl="~/Default.aspx"/>   
+                
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Desktop.aspx" Text="Desktop Apps"/>
+                        <asp:MenuItem NavigateUrl="~/Mobile.aspx" Text="Mobile Apps"/>
+                        <asp:MenuItem NavigateUrl="~/Web.aspx" Text="Web Apps"/>
+                    </Items>
+                </asp:Menu>
+               
+            </div>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <table class="style3" >
+                    <tr>
+                        <td class="style4">
+                        </td>
+                        <td class="style5">
+                            <asp:ContentPlaceHolder ID="Content1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
